@@ -1,0 +1,10 @@
+.cards-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.cards-wrapper a {
+  text-decoration: none;
+  display: block;
+  margin: 8px 0;
+}

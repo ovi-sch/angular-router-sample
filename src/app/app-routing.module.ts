@@ -17,6 +17,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  { path: 'my-interests', loadChildren: () => import('./my-interests/my-interests.module').then(m => m.MyInterestsModule) },
   ];
 
 @NgModule({
