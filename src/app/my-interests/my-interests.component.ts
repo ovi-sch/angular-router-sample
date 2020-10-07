@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HackerNewsService} from '../hackernews.service';
 import {NewsItem} from '../news-item';
-
+import {StoreService} from '../store.service';
 
 @Component({
   selector: 'app-my-interests',
   templateUrl: './my-interests.component.html',
   styleUrls: ['./my-interests.component.css']
 })
-export class MyInterestsComponent implements OnInit {
+export class MyInterestsComponent implements OnInit, OnDestroy{
   newsItems: NewsItem[] = [];
-  constructor(private hackerNewsService: HackerNewsService) {}
+
+  constructor(
+    private hackerNewsService: HackerNewsService,
+    private storeService: StoreService,
+  ) {}
+
+  storeServiceAdd() {
+    this.storeService.add();
+  }
 
   fetchNewsItem(ids: String[]): void {
     for (let i = 0; i <= 10; i++) {
@@ -26,4 +34,6 @@ export class MyInterestsComponent implements OnInit {
     this.fetchNews();
   }
 
+  ngOnDestroy(): void {
+  }
 }

@@ -1,0 +1,9 @@
+<div class="cards-wrapper" *ngIf="newsItemDetails">
+  <mat-card>
+    <h2>{{newsItemDetails.title}}</h2>
+    <p>Author: <strong>{{newsItemDetails.by}}</strong></p>
+    <a href="{{newsItemDetails.url}}">Read more</a>
+    <hr>
+    <button routerLink="/my-interests/">Back</button>
+  </mat-card>
+</div>

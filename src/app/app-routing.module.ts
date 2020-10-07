@@ -18,6 +18,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'my-interests', loadChildren: () => import('./my-interests/my-interests.module').then(m => m.MyInterestsModule) },
+  { path: 'my-interests/:id', loadChildren: () => import('./news-item/news-item.module').then(m => m.NewsItemModule) },
   ];
 
 @NgModule({
